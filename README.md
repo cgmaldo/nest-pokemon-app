@@ -17,7 +17,7 @@ En Linux: sudo npm i -g @nestjs/cli
 ```
 4. Levantar base de datos.
 
-  - Lanzar Docker Desktop (si no está instalador Docker en el sistema)
+  - Lanzar Docker Desktop (si no está instalado Docker en el sistema)
 
   - Ejecutar
   ```
@@ -35,4 +35,15 @@ npm run start:dev
 ***NOTA*** Esto borrará todo registro de pokemons de la base datos y generará nuevos. No es recomendable emplearlo en producción.
 ```
 http://localhost:3000/api/v2/seed
+```
+## Stack usado
+* MongoDB
+* Nest
+
+# Generar build de producción
+1. Crear el archivo ```.env.prod```
+2. Completar las variables de entorno de producción.
+3. Crear la imagen.
+```
+docker compose -f docker-compose.prod.yaml --env-file .env.prod up --build
 ```
